@@ -10,7 +10,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 let redirectUri =
   process.env.NODE_ENV === "development"
     ? import.meta.env.VITE_LOGIN_REDIRECT_URI
-    : import.meta.env.VITE_LOGIN_REDIRECT_URI;
+    : import.meta.env.VITE_LOGIN_REDIRECT_URI_PROD;
 
 createRoot(document.getElementById("root")).render(
   <Provider store={appStore}>
