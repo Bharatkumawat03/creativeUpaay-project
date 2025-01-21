@@ -65,7 +65,7 @@ const Sidebar = () => {
 
         <div className="flex pt-4   w-[90%] flex-col justify-center items-start text-sm font-light gap-3">
           {data.map((item, index) => (
-            <div
+            <div key={index}
               className={`flex  w-full justify-between font-semibold text-gray-500 items-center cursor-pointer  p-2 ${
                 project === item.name
                   ? " bg-violet-100 text-black rounded-sm"
