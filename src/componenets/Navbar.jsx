@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/logo.png";
-import profile from "../assets/profile.png";
 import { RxDoubleArrowLeft } from "react-icons/rx";
 import { CiCalendar, CiSearch } from "react-icons/ci";
 import { CiSquareQuestion } from "react-icons/ci";
@@ -13,7 +12,7 @@ import { toggleMenu } from "../utils/appSlice";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { logout } = useAuth0();
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user} = useAuth0();
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
@@ -39,7 +38,6 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <div
               className="absolute   pl-3  hover:scale-90 "
-              // onClick={() => alert("result your query")}
             >
               <CiSearch color="gray" size={20} />
             </div>
@@ -58,7 +56,7 @@ const Navbar = () => {
             </div>
             <div className="flex justify-center items-center gap-4">
               <div className="hidden md:flex flex-col justify-center items-end text-sm">
-                <p className=" font-bold text-xs lg:text-md">Bharat Kumawat</p>
+                <p className=" font-bold text-xs lg:text-md">{user.name}</p>
                 <p className="font-light text-gray-600 hidden sm:flex">Rajasthan, India</p>
               </div>
               <img

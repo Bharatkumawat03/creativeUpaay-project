@@ -5,14 +5,11 @@ import { DndContext } from "@dnd-kit/core";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllTasks } from "../utils/taskSlice";
-const color1 = "[#5030E5]";
-const color2 = "orange-300";
-const color3 = "green-300";
 
 const COLUMNS = [
-  { id: "TODO", title: "To Do", color: color1 },
-  { id: "IN_PROGRESS", title: "On Progress", color: color2 },
-  { id: "DONE", title: "Done", color: color3 },
+  { id: "TODO", title: "To Do", color: "[#5030E5]" },
+  { id: "IN_PROGRESS", title: "On Progress", color: "orange-300" },
+  { id: "DONE", title: "Done", color: "green-300" },
 ];
 
 const Todo = ({ setTodoModal, Filter }) => {
@@ -94,11 +91,9 @@ const Todo = ({ setTodoModal, Filter }) => {
   };
 
   const deletesubsection = ({ id, index }) => {
-    console.log(id, index);
     const taskid = id;
     const task = tasks.find((item) => item.id === taskid);
     const subtask = task?.subtask ? [...task.subtask] : [];
-    console.log(subtask);
     let newsubtask = null;
     if (subtask.length > 0) {
       newsubtask = subtask?.filter((item, ind) => ind !== index);
@@ -115,7 +110,6 @@ const Todo = ({ setTodoModal, Filter }) => {
 
     dispatch(setAllTasks(currtask));
     setTasks(currtask);
-    console.log("deleted");
   };
 
   function handleDragEnd(event) {

@@ -28,7 +28,7 @@ const Dashboard = ({ setTodoModal }) => {
     setFilter(event.target.value);
   };
   return (
-    <div className={`h-full ${isMenuOpen ? 'hidden' : ''}  md:flex justify-center mt-8  item-center w-full  `}>
+    <div className={`h-full ${isMenuOpen ? 'hidden' : ''}  md:flex justify-center mt-8  item-center w-full`}>
       <div className=" w-[96%] mx-4 h-full flex  flex-col gap-5 justify-center items-center ">
         <div className="w-full  flex justify-between  pr-[60px] items-center">
           <div className="flex font-semibold  text-4xl  items-center justify-center gap-3">
